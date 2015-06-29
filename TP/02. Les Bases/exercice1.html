@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script language="javascript" type="text/javascript">
+            i=52;
+            pays = new Array();
+            pays[33] = 'France';
+            pays[32] = 'Belgique';
+            pays[52] = 'Mexique';
+            pays[81] = 'Japon';
+
+            document.write('indice téléphonique du pays ' + pays[i] + ' : ' + i);
+            document.write('<br>' + pays.length);
+            
+            while (i<=81) {
+                if (pays[i] != 'undefined') {
+                    document.write('<br>' + pays[i]);
+                } else {
+                    document.write();
+                }
+                i++;
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

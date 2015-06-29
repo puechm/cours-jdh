@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script language="javascript" type="text/javascript" >
+            var tab_pays = [];
+            tab_pays.push(["Allemagne", 10]);
+            tab_pays.push(["France", 11]);
+            tab_pays.push(["Belgique", 12]);
+            tab_pays.push(["Suisse", 13]);
+            tab_pays.push(["Italie", 14]);
+            tab_pays.push(["Espagne", 15]);
+
+            coul = ["grey","green"];
+            tabHTML = "<table><tr><th>Pays</th><th>Frais</th></tr>";
+
+            for (i = 0; i < tab_pays.length; i++) {
+                console.log(tab_pays);
+                
+                tabHTML += "<tr bgcolor=\""+ coul[i%2] +"\"><td>" + tab_pays[i][0] + "</td>";
+                tabHTML += "<td>" + tab_pays[i][1] + "</td></tr>";
+            }
+
+            tabHTML += "</table>";
+            document.write(tabHTML);
+        </script>
+    </body>
+</html>
