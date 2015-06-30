@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Accueil</title>
+        <style type="text/css" media="screen">
+            @import url("lib/style.css");
+        </style>
+
+        <script language="javascript" type="text/javascript" src="lib/affiche.js" ></script>
+        <script language="javascript" type="text/javascript" src="lib/menu.js" ></script>
+        <script language="javascript" type="text/javascript" src="lib/toolkit.js" ></script>
+        <script language="javascript" type="text/javascript" src="lib/lib.js" ></script>
+    </head>
+    <body>
+        <script language="javascript" type="text/javascript" >affichePageBandeauHaut()</script>
+        <script language="javascript" type="text/javascript" >affichePageMenu('recherche.htm')</script>
+
+        <script language="javascript" type="text/javascript" >affichePageTitre('recherche.htm')</script>
+
+        <div id="blockDroit">
+            <script language="javascript" type="text/javascript" >
+                bd1 = new ficheBd(1, "Asterix", "Uderzo", "2010", "Chouette", 15, 100);
+                document.write(bd1);
+                bd1.stocker(10);
+                document.write(bd1);
+                bd1.destocker(20);
+                document.write(bd1);
+                bd2 = new ficheBd(2, "Boule & Bill", "Camif", "2012", "Hyper nul", 15, 100);
+                document.write(bd2);
+            </script>
+        </div>
+
+
+
+        <script language="javascript" type="text/javascript" >afficheFooter()</script>
+    </body>
+
+</html>
