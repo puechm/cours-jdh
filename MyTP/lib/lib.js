@@ -34,3 +34,50 @@ function affiche() {
     
     return ficheHTML;
 }
+
+function stockBd() {
+    this.stock = new Array();
+    this.stockByKey = new Array();
+    
+    this.ajouter = function (id, titre, auteur, sortie, resume, prix, stock)
+		{
+			this.referencer(new ficheBd(id, titre, auteur, sortie, resume, prix, stock));
+		}
+		
+    this.referencer = function (bd)
+    {
+            if(typeof bd == 'object')
+            {
+                    this.stockByKey[bd.id]= this.stock.length;
+                    this.stock[this.stock.length]= bd;
+            }
+    }
+    
+    this.stocker = function (id,qte)
+		{
+			this.stock[this.stockByKey[id]].stocker(qte);
+		}
+		
+		
+		this.destocker = function (id,qte)
+		{
+			this.stock[this.stockByKey[id]].stocker(qte);
+		}
+		
+	
+		this.toString = function()
+		{
+			out = "<h3>Tableau des BD</h3><table class=\"search\">";
+			out+= "<tr><th>Titre</th><th>Auteur</th><th>Sortie</th><th>Prix</th><th>Stock</th></tr>";
+			for ( i = 0; i < this.stock.length; i++) {
+				var altern = i % 2;
+				out+= "<tr class=\"altern"+altern+"\"><td>"+this.stock[i].titre+"</td>";
+				out+= "<td>"+this.stock[i].auteur+"</td>";
+				out+= "<td>"+this.stock[i].sortie+"</td>";
+				out+= "<td>"+this.stock[i].prix+"</td>";
+				out+= "<td>"+this.stock[i].stock+"</td></tr>";
+			}
+			out+= "</table>";
+			return out;
+		}
+}
